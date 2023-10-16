@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            ContentUnavailableView(label: {
+                Label("No Mail", systemImage: "tray.fill")
+            }, description: {
+                Text("New mails you receive will appear here.")
+            }, actions: {
+                Button(action: {}) {
+                    Text("Refresh")
+                }
+            })
         }
-        .padding()
     }
 }
 
